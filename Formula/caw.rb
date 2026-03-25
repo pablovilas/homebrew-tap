@@ -5,13 +5,13 @@
 class Caw < Formula
   desc "Monitor your AI coding assistants"
   homepage "https://github.com/pablovilas/caw"
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
   depends_on :macos
 
   if Hardware::CPU.arm?
-    url "https://github.com/pablovilas/caw/releases/download/v0.0.3/caw_0.0.3_darwin_arm64.tar.gz"
-    sha256 "ba1013512677f6aeb3336972c688ced4987dd9c0482f3e99cc5ceeddc79e5ef2"
+    url "https://github.com/pablovilas/caw/releases/download/v0.0.4/caw_0.0.4_darwin_arm64.tar.gz"
+    sha256 "829de54e61660e9db0bddec795c49338df850fc36803a45c29434976f12e2e4e"
 
     define_method(:install) do
       bin.install "caw"
