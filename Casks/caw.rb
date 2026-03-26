@@ -1,6 +1,6 @@
 cask "caw" do
   version "0.0.7"
-  sha256 "1f55f489b0c24c5d7203f874727a683184e4c6cf9f22de5571307641e4f476ec"
+  sha256 "65dd2d3b3bde008e9edb0656267153551c14d26c72b415e7ca0ed7dd5be849c0"
 
   url "https://github.com/pablovilas/caw/releases/download/v#{version}/caw_#{version}_macos_arm64.app.zip"
   name "caw"
@@ -9,6 +9,12 @@ cask "caw" do
 
   app "caw.app"
   binary "#{appdir}/caw.app/Contents/MacOS/caw"
+
+  postflight do
+    system_command "/usr/bin/xattr",
+                   args: ["-cr", "#{appdir}/caw.app"],
+                   sudo: false
+  end
 
   zap trash: [
     "~/Library/Preferences/com.pablovilas.caw.plist",
